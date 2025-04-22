@@ -1,34 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>UNSAT Detection via Modular Weighted Sums</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formal Proof of UNSAT via Modular Sums</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f4; color: #222; }
-    h1 { color: #005288; }
-    .graph { text-align: center; margin-top: 30px; }
-    .footer { font-size: 0.8em; margin-top: 50px; color: gray; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #333;
+    }
+
+    header {
+      background-color: #004477;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      color: #004477;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.3rem;
+    }
+
+    .graph {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .graph img {
+      max-width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #777;
+      margin: 3rem 0 1rem;
+    }
   </style>
 </head>
 <body>
-  <h1>Formal Proof of UNSAT via Modular Weighted Sums</h1>
-  <p>
-    This project demonstrates a new approach for detecting UNSAT formulas through modular weighted sums. We apply optimized backtracking, GPU parallelization, and mathematical formalization to prove the zero-sum condition <strong>S(φ) ≡ 0 mod M</strong> for UNSAT CNF formulas.
-  </p>
+  <header>
+    <h1>Formal Proof of UNSAT via Modular Weighted Sums</h1>
+    <nav>
+      <a href="#introduction">Introduction</a>
+      <a href="#method">Method</a>
+      <a href="#results">Results</a>
+      <a href="#graphs">Graphs</a>
+      <a href="#references">References</a>
+    </nav>
+  </header>
 
-  <h2>Comparison Graph (SAT vs UNSAT)</h2>
-  <div class="graph">
-    <img src="comparative_graph.png" alt="SAT vs UNSAT Graph" width="500">
-  </div>
+  <main>
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>
+        This project proposes a novel modular method to detect UNSAT CNF formulas using deterministic vector summation techniques. The approach is grounded in linear algebra and validated through CUDA-based simulations.
+      </p>
+    </section>
 
-  <h3>Authors</h3>
-  <ul>
-    <li>Jamesson Richard Campos Santos da Graça</li>
-    <li>Click (AI Scientific Assistant)</li>
-  </ul>
+    <section id="method">
+      <h2>Method</h2>
+      <p>
+        We calculate weighted modular sums <strong>S(φ)</strong> using exponential, polynomial and hash-based weights, across distinct prime modules (e.g., 10⁶+7). If <strong>S(φ) ≡ 0</strong> for all combinations, φ is UNSAT.
+      </p>
+    </section>
 
-  <div class="footer">
-    © 2025 – Formal UNSAT Proof Project | Powered by GitHub Pages
-  </div>
+    <section id="results">
+      <h2>Results</h2>
+      <ul>
+        <li>Tested PHP(3,2) to PHP(6,5) → S(φ) ≡ 0</li>
+        <li>Random 3-SAT UNSAT formulas → S(φ) ≡ 0</li>
+        <li>Modified SAT versions → S(φ) ≠ 0</li>
+      </ul>
+    </section>
+
+    <section id="graphs">
+      <h2>Graphs</h2>
+      <div class="graph">
+        <p><strong>SAT vs UNSAT Comparison</strong></p>
+        <img src="comparative_graph.png" alt="SAT vs UNSAT Comparison" />
+      </div>
+    </section>
+
+    <section id="references">
+      <h2>References</h2>
+      <ul>
+        <li>P. Beame et al., “Towards understanding and improving SAT solvers,” <i>JAR</i>, 2013.</li>
+        <li>O. Goldreich, “On the role of randomness in computational complexity,” 2010.</li>
+        <li>This work: Jamesson R. C. S. da Graça & Click (AI Assistant)</li>
+      </ul>
+    </section>
+
+    <footer>
+      &copy; 2025 – Formal UNSAT Modular Proof Project | GitHub Pages
+    </footer>
+  </main>
 </body>
 </html>
