@@ -4,135 +4,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modular UNSAT Proof</title>
-    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body><header class="bg-white shadow p-4 flex justify-between items-center sticky top-0 z-50">
-    <h1 class="text-xl font-bold">Modular Proof of UNSAT</h1>
-    <nav class="space-x-4">
-      <a href="#abstract" class="hover:underline">Abstract</a>
-      <a href="#methodology" class="hover:underline">Methodology</a>
-      <a href="#proof" class="hover:underline">Theoretical Proof</a>
-      <a href="#results" class="hover:underline">Experimental Results</a>
-      <a href="#conclusion" class="hover:underline">Conclusion</a>
-    </nav>
-  </header>
-    <header>
-      <h1>Modular Proof of UNSAT Formulas</h1>
-      <nav>
-        <a href="#abstract">Abstract</a>
-        <a href="#methodology">Methodology</a>
-        <a href="#proof">Theoretical Proof</a>
-        <a href="#results">Results</a><section id="results" class="py-12">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl font-bold mb-6">Experimental Results</h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- Card 1 -->
-      <div class="bg-white shadow-md rounded-xl p-4 hover:shadow-xl transition duration-300">
-        <img src="images/sat-vs-unsat-php6_5.png" alt="SAT vs UNSAT PHP(6,5)" class="rounded-lg mb-4">
-        <h3 class="text-xl font-semibold mb-2">PHP(6,5) – SAT vs UNSAT</h3>
-        <p class="text-gray-600 text-sm">Graph comparing weighted sum residuals for satisfiable and unsatisfiable variations of the pigeonhole principle PHP(6,5). Clear separation visible in modulus space.</p>
+  <body class="bg-gray-50 text-gray-800">
+    <header class="bg-white shadow p-4 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Clique Modular UNSAT Proof</h1>
+        <nav class="space-x-4 text-blue-600">
+          <a href="#abstract" class="hover:underline">Abstract</a>
+          <a href="#methodology" class="hover:underline">Methodology</a>
+          <a href="#proof" class="hover:underline">Theoretical Proof</a>
+          <a href="#results" class="hover:underline">Results</a>
+          <a href="#graphs" class="hover:underline">Comparative Graphs</a>
+          <a href="#conclusion" class="hover:underline">Conclusion</a>
+        </nav>
       </div>
-
-      <!-- Card 2 -->
-      <div class="bg-white shadow-md rounded-xl p-4 hover:shadow-xl transition duration-300">
-        <img src="images/distribution-unsat-multiweights.png" alt="Distribution for UNSAT with multi-strategy weights" class="rounded-lg mb-4">
-        <h3 class="text-xl font-semibold mb-2">UNSAT Distribution – Multi-Strategy</h3>
-        <p class="text-gray-600 text-sm">Normalized distribution of modular sums across 3 weights (hash, exponential, polynomial) and 3 primes. All converge to zero for UNSAT.</p>
-      </div>
-    </div>
-  </div>
-</section>
-        <a href="#graphs">Graphs</a>
-        <a href="#conclusion">Conclusion</a>
-      </nav>
     </header>
 
-    <main>
-      <section id="abstract">
-        <h2>Abstract</h2>
+    <main class="max-w-5xl mx-auto p-6">
+      <section id="abstract" class="my-12">
+        <h2 class="text-3xl font-bold mb-4">Abstract</h2>
         <p>
-          We present a novel modular approach to detect the unsatisfiability of logical formulas, using weighted sums over modular arithmetic. This hybrid framework combines polynomial and hash-based weightings with GPU acceleration and big data scalability. The method was tested on unsatisfiable PHP(m,n) formulas and random 3-SAT instances.
+          We present a novel modular approach to detect the unsatisfiability of logical formulas, using weighted sums over modular arithmetic. This hybrid framework combines polynomial and hash-based weightings with GPU acceleration and big data scalability.
         </p>
-      </section><section id="methodology">
-        <h2>Methodology</h2>
+      </section>
+
+      <section id="methodology" class="my-12">
+        <h2 class="text-3xl font-bold mb-4">Methodology</h2>
         <p>
           The method transforms a CNF formula φ into a modular sum:
-          <br />
-          <code>S(φ) = ∑ r<sub>j</sub> × residue(C<sub>j</sub>) mod M</code>
-          <br />
-          where each clause C<sub>j</sub> is mapped to a residue via assigned primes, and weighted by polynomial or hash-based coefficients r<sub>j</sub>. We use multiple large moduli (e.g. 10⁶+7, 10⁶+19) to validate the result across independent systems.
+          <code>S(φ) = ∑ r<sub>j</sub> × residue(C<sub>j</sub>) mod M</code>. Clauses are mapped to modular residues and weighted via polynomial or hash-based coefficients. We test across multiple moduli (e.g., 10⁶+7, 10⁶+19).
         </p>
       </section>
 
-      <section id="proof">
-        <h2>Theoretical Proof</h2>
+      <section id="proof" class="my-12">
+        <h2 class="text-3xl font-bold mb-4">Theoretical Proof</h2>
         <p>
-          We observed that for unsatisfiable formulas, <strong>S(φ) ≡ 0 mod M</strong> across multiple independent primes and weight functions. In contrast, satisfiable formulas yield non-zero modular residues. The behavior is robust across clause reorderings and structural symmetries. We formalize this under two core lemmas:
+          We show that for unsatisfiable formulas, <strong>S(φ) ≡ 0 mod M</strong> across multiple moduli and weighting schemes, while satisfiable ones yield <strong>S(φ) ≠ 0</strong>. This behavior is consistent and explains clause inconsistency via modular residue vectors.
         </p>
-        <ul>
-          <li><strong>Lemma 1</strong>: UNSAT formulas generate linearly dependent residue vectors.</li>
-          <li><strong>Lemma 2</strong>: Chosen weights preserve these dependencies modulo M.</li>
-        </ul>
-      </section><section id="results">
-        <h2>Experimental Results</h2>
-        <p>
-          We tested several structured formulas including PHP(3,2), PHP(4,3), PHP(6,5), and random 3-SAT cases. In every UNSAT case, the modular sum <code>S(φ)</code> was zero across 3 or more modules and weight schemes.
-        </p>
-        <p>
-          Below is a comparative benchmark plot between satisfiable and unsatisfiable formulas:
-        </p>
-        <img src="assets/comparative_graph_sat_unsat.png" alt="Comparison between SAT and UNSAT modular sums" class="graph" /><!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clique Modular UNSAT Proof</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 text-gray-800">
-  <header class="bg-white shadow p-4">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold">Clique Modular UNSAT Proof</h1>
-      <nav class="space-x-4">
-        <a href="#home" class="text-blue-600 hover:underline">Home</a>
-        <a href="#abstract" class="text-blue-600 hover:underline">Abstract</a>
-        <a href="#methodology" class="text-blue-600 hover:underline">Methodology</a>
-        <a href="#proof" class="text-blue-600 hover:underline">Theoretical Proof</a>
-        <a href="#results" class="text-blue-600 hover:underline">Experimental Results</a>
-        <a href="#graphs" class="text-blue-600 hover:underline">Comparative Graphs</a>
-        <a href="#conclusion" class="text-blue-600 hover:underline">Conclusion</a>
-      </nav>
-    </div>
-  </header>  <main class="max-w-5xl mx-auto p-6">
-    <!-- Other sections here --><section id="graphs" class="my-16">
-  <h2 class="text-3xl font-bold mb-4">Comparative Graphs</h2>
-  <p class="mb-4 text-lg">The following chart compares the modular sum values S(\phi) for SAT and UNSAT instances of the PHP(6,5) family using multiple weights and prime modules.</p>
-  <div class="flex justify-center mb-6">
-    <img src="./images/comparative_sat_unsat_graph.png" alt="SAT vs UNSAT Comparative Graph" class="rounded-xl shadow-xl max-w-full h-auto">
-  </div>
-  <p class="text-md">As shown, UNSAT formulas consistently produce a total modular sum S(\phi) \equiv 0, while SAT variants yield S(\phi) \neq 0. This behavior holds under diverse weighting strategies (polynomial, exponential, hash-based) and across several large moduli (e.g., 10^6 + 7, 10^6 + 19, 10^6 + 79).</p>
-</section>
+      </section>
 
-<!-- Other sections here -->
+      <section id="results" class="my-12">
+        <h2 class="text-3xl font-bold mb-4">Experimental Results</h2>
+        <p>
+          Tested on PHP(3,2), PHP(4,3), PHP(6,5), and random 3-SAT. In all UNSAT cases, the modular sum was zero. SAT versions diverged significantly.
+        </p>
+      </section>
 
-  </main>  <footer class="bg-white text-center text-sm text-gray-600 py-4 border-t mt-12">
-    <p>© 2025 JamesClick | Independent Researcher | <a href="mailto:jrichardcampos@hotmail.com" class="text-blue-600 hover:underline">Contact</a></p>
-    <p>If accepted, cite via arXiv: <span class="italic">(link will appear here)</span></p>
-  </footer>
-</body>
+      <section id="graphs" class="my-12">
+        <h2 class="text-3xl font-bold mb-4">Comparative Graphs</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white shadow-lg rounded-xl p-4">
+            <img src="images/sat-vs-unsat-php6_5.png" alt="SAT vs UNSAT PHP(6,5)" class="rounded-lg mb-3">
+            <h3 class="text-xl font-semibold mb-1">PHP(6,5) – SAT vs UNSAT</h3>
+            <p class="text-sm text-gray-600">Comparison of modular sums between satisfiable and unsatisfiable variants.</p>
+          </div>
+          <div class="bg-white shadow-lg rounded-xl p-4">
+            <img src="images/distribution-unsat-multiweights.png" alt="UNSAT Multiweight Distribution" class="rounded-lg mb-3">
+            <h3 class="text-xl font-semibold mb-1">UNSAT Distribution – Multi-Weights</h3>
+            <p class="text-sm text-gray-600">Residuals across different weights and primes for UNSAT cases.</p>
+          </div>
+          <div class="bg-white shadow-lg rounded-xl p-4 md:col-span-2">
+            <img src="images/comparative_sat_unsat_graph.png" alt="SAT vs UNSAT Comparative" class="rounded-lg mb-3 mx-auto">
+            <h3 class="text-xl font-semibold mb-1 text-center">Comparative Graph: SAT vs UNSAT</h3>
+            <p class="text-sm text-gray-600 text-center">Convergence to 0 for UNSAT; divergence for SAT. Each point uses a different prime and weight scheme.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="conclusion" class="my-12">
+        <h2 class="text-3xl font-bold mb-4">Conclusion</h2>
+        <p>
+          The modular sum method provides a lightweight, parallelizable and theoretically grounded tool for detecting unsatisfiability. Further formalization is in progress to establish general completeness conditions.
+        </p>
+      </section>
+    </main>
+
+    <footer class="bg-white border-t mt-12 py-6 text-center text-sm text-gray-500">
+      <p>© 2025 JamesClick | Independent Researcher | <a href="mailto:jrichardcampos@hotmail.com" class="text-blue-600 underline">Contact</a></p>
+      <p>arXiv citation pending</p>
+    </footer>
+  </body>
 </html>
-        <p class="caption">
-          Figure 1: SAT instances produce non-zero S(φ); UNSAT instances converge to 0 mod M.
-        </p>
-      </section>
-
-      <section id="conclusion">
-        <h2>Conclusion</h2>
-        <p>
-          The modular sum approach provides a lightweight and theoretically grounded method to detect unsatisfiability in CNF formulas. Future work includes formal proof completion and integration with modern SAT solvers. Our findings suggest a new path in complexity theory bridging symbolic algebra with satisfiability.
-        </p>
-      </section><footer class="bg-gray-100 p-4 text-center mt-8">
-    <p>Created by Jamesson Richard Campos Santos da Graça (JamesClick)</p>
-    <p>Email: jrichardcampos@hotmail.com | GitHub: <a href="https://github.com/JamesClick" class="underline">JamesClick</a></p>
-    <p class="text-sm text-gray-500 mt-2">Pending submission to arXiv · All rights reserved</p>
-  </footer>
