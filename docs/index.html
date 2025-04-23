@@ -82,7 +82,45 @@
         <p>
           Below is a comparative benchmark plot between satisfiable and unsatisfiable formulas:
         </p>
-        <img src="assets/comparative_graph_sat_unsat.png" alt="Comparison between SAT and UNSAT modular sums" class="graph" />
+        <img src="assets/comparative_graph_sat_unsat.png" alt="Comparison between SAT and UNSAT modular sums" class="graph" /><!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clique Modular UNSAT Proof</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <header class="bg-white shadow p-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Clique Modular UNSAT Proof</h1>
+      <nav class="space-x-4">
+        <a href="#home" class="text-blue-600 hover:underline">Home</a>
+        <a href="#abstract" class="text-blue-600 hover:underline">Abstract</a>
+        <a href="#methodology" class="text-blue-600 hover:underline">Methodology</a>
+        <a href="#proof" class="text-blue-600 hover:underline">Theoretical Proof</a>
+        <a href="#results" class="text-blue-600 hover:underline">Experimental Results</a>
+        <a href="#graphs" class="text-blue-600 hover:underline">Comparative Graphs</a>
+        <a href="#conclusion" class="text-blue-600 hover:underline">Conclusion</a>
+      </nav>
+    </div>
+  </header>  <main class="max-w-5xl mx-auto p-6">
+    <!-- Other sections here --><section id="graphs" class="my-16">
+  <h2 class="text-3xl font-bold mb-4">Comparative Graphs</h2>
+  <p class="mb-4 text-lg">The following chart compares the modular sum values S(\phi) for SAT and UNSAT instances of the PHP(6,5) family using multiple weights and prime modules.</p>
+  <div class="flex justify-center mb-6">
+    <img src="./images/comparative_sat_unsat_graph.png" alt="SAT vs UNSAT Comparative Graph" class="rounded-xl shadow-xl max-w-full h-auto">
+  </div>
+  <p class="text-md">As shown, UNSAT formulas consistently produce a total modular sum S(\phi) \equiv 0, while SAT variants yield S(\phi) \neq 0. This behavior holds under diverse weighting strategies (polynomial, exponential, hash-based) and across several large moduli (e.g., 10^6 + 7, 10^6 + 19, 10^6 + 79).</p>
+</section>
+
+<!-- Other sections here -->
+
+  </main>  <footer class="bg-white text-center text-sm text-gray-600 py-4 border-t mt-12">
+    <p>© 2025 JamesClick | Independent Researcher | <a href="mailto:jrichardcampos@hotmail.com" class="text-blue-600 hover:underline">Contact</a></p>
+    <p>If accepted, cite via arXiv: <span class="italic">(link will appear here)</span></p>
+  </footer>
+</body>
+</html>
         <p class="caption">
           Figure 1: SAT instances produce non-zero S(φ); UNSAT instances converge to 0 mod M.
         </p>
