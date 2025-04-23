@@ -1,36 +1,109 @@
-
+/* Tipografia e estrutura geral */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f5f5;
+  background-color: #f8f9fa;
   margin: 0;
   padding: 0;
   color: #333;
   line-height: 1.6;
 }
-h1, h2 {
+
+h1, h2, h3 {
   color: #003366;
   margin-top: 0;
+  font-weight: 600;
 }
+
+/* Navegação */
 nav {
-  background-color: #0055a5;
+  background-color: #003366;
   padding: 12px 20px;
   text-align: center;
 }
+
 nav a {
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
   margin: 0 15px;
-  transition: color 0.2s;
+  transition: color 0.3s ease;
 }
+
 nav a:hover {
-  color: #ffd700;
+  color: #ffc107;
 }
+
+/* Seções */
 section {
   padding: 40px;
   background: #ffffff;
   max-width: 960px;
-  margin: 30px auto;
+  margin: 40px auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+}
+
+/* Tabelas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+th {
+  background-color: #e9ecef;
+  font-weight: bold;
+}
+
+/* Código */
+code {
+  background-color: #f1f1f1;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: Consolas, monospace;
+}
+
+pre {
+  background-color: #f8f9fa;
+  padding: 20px;
+  overflow-x: auto;
+  border-left: 5px solid #007bff;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 6px;
+}
+
+/* Imagens */
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Links */
+a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #004494;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #003366;
+  color: white;
+  font-size: 0.9rem;
+  margin-top: 40px;
+  border-top: 2px solid #002244;
 }
