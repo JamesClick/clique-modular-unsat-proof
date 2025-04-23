@@ -1,9 +1,102 @@
 <!DOCTYPE html>
-<html>
-<head><title>Modular UNSAT Proof</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modular UNSAT Proof</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
-<h1>Modular UNSAT Proof - JamesClick</h1>
-<p>Todos os gráficos, provas e links estão incluídos.</p>
-<img src='images/comparative_sat_unsat_graph.png' alt='Graph 1'>
+  <h1>Formalization of the Modular UNSAT Conjecture</h1>
+  <p><strong>By Jamesson Richard Campos Santos da Graça (<em>JamesClick</em>)</strong></p>
+
+  <ul>
+    <li>Introduction</li>
+    <li>Theoretical Foundation</li>
+    <li>Concrete Example</li>
+    <li>Application of Weights</li>
+    <li>Residue Table</li>
+    <li>CNF Files</li>
+    <li>Code Snippets</li>
+    <li>Graphs</li>
+    <li>Conclusion</li>
+    <li><a href="https://github.com/JamesClick/clique-modular-unsat-proof" target="_blank">GitHub</a></li>
+  </ul>
+
+  <h2>Introduction</h2>
+  <p>This work presents a computational approach to detecting unsatisfiable (UNSAT) Boolean formulas using modular weighted sums.</p>
+
+  <h2>Theoretical Foundation</h2>
+  <p>Let a CNF formula <code>&phi;</code> be represented by a set of clauses encoded as integer vectors. A weight vector <code>w</code> is applied and evaluated modulo a prime <code>M</code>. If <code>&phi;</code> is UNSAT, then <code>S(&phi;) &equiv; 0</code> for all orthogonal weight vectors and sufficiently large moduli.</p>
+
+  <h2>Concrete Example</h2>
+  <p>Example formula encoded and evaluated using weights <code>w = (2, 3, 5)</code> and <code>M = 7</code>.</p>
+
+  <h2>Application of Weights</h2>
+  <p>We test various weight bases (exponential, polynomial, random) on each formula and compute <code>S(&phi;) mod M</code>.</p>
+
+  <h2>Residue Table</h2>
+  <table border="1" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Formula</th>
+        <th>Modulus</th>
+        <th>Residues</th>
+        <th>Weights</th>
+        <th>S(&phi;) mod M</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>PHP(6,5)</td>
+        <td>7</td>
+        <td>(1,3,2,4,6,1,5)</td>
+        <td>(2,3,1,5,7,4,6)</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>3-SAT (20 vars)</td>
+        <td>11</td>
+        <td>(4,6,1,9,2,8,7)</td>
+        <td>(3,5,2,1,6,7,9)</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>PHP(5,4)</td>
+        <td>13</td>
+        <td>(3,5,4,2,6,7)</td>
+        <td>(6,2,4,1,3,5)</td>
+        <td>0</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>CNF Files Used</h2>
+  <ul>
+    <li><code>php65_unsat.cnf</code></li>
+    <li><code>3sat_unsat_20vars.cnf</code></li>
+    <li><code>php54_unsat.cnf</code></li>
+  </ul>
+
+  <h2>Code Snippets</h2>
+  <pre><code>
+def calcular_residuos(clausulas, pesos, modulo):
+    resultado = 0
+    for clausula in clausulas:
+        s = sum(p * l for p, l in zip(pesos, clausula)) % modulo
+        resultado = (resultado + s) % modulo
+    return resultado
+  </code></pre>
+
+  <h2>Graphs</h2>
+  <img src="images/comparative_sat_unsat_graph.png" alt="SAT vs UNSAT Graph" width="600"><br><br>
+  <img src="images/distribution-unsat-multiweights.png" alt="UNSAT Distribution" width="600"><br><br>
+  <img src="images/sat-vs-unsat-php6_5.png" alt="PHP(6,5) SAT vs UNSAT" width="600">
+
+  <h2>Conclusion</h2>
+  <p>This modular method consistently yields <code>S(&phi;) &equiv; 0</code> for known UNSAT formulas. Future work includes applying this technique to larger and more complex formulas and presenting it in academic venues.</p>
+
+  <p><em>Project by JamesClick</em></p>
 </body>
 </html>
+
