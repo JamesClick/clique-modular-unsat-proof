@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modular UNSAT Proof - JamesClick</title>
+  <link href="style.css" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Modular UNSAT Proof</h1>
+    <p>Todos os gráficos, provas e links estão incluídos.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Resumo do Projeto</h2>
+      <p>Este projeto apresenta uma abordagem baseada em resíduos modulares para detectar fórmulas booleanas insatisfatíveis (UNSAT). A conjectura é baseada na ideia de que S(φ) ≡ 0 mod M para todas as bases ortogonais de pesos em fórmulas UNSAT.</p>
+    </section>
+
+    <section>
+      <h2>Conjectura Modular</h2>
+      <p>Seja φ uma fórmula booleana em CNF. Se φ for insatisfatível, então para qualquer vetor de pesos ortogonal e módulo primo suficientemente grande M, temos:</p>
+      <p>\[ S(\varphi) \equiv 0 \mod M \]</p>
+    </section>
+
+    <section>
+      <h2>Provas Computacionais</h2>
+      <ul>
+        <li><a href="assets/projeto_final_numerado.pdf" download>Download PDF final</a></li>
+        <li><a href="assets/clique_modular_unsat_prova.zip" download>Prova computacional (ZIP)</a></li>
+        <li><a href="assets/residuos_resultado.csv" download>Resultados em CSV</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Gráficos</h2>
+      <img src="images/comparative_sat_unsat_graph.png" alt="Gráfico SAT vs UNSAT">
+      <img src="images/distribution-unsat-multiweights.png" alt="Distribuição de pesos para UNSAT">
+      <img src="images/sat-vs-unsat-php6_5.png" alt="PHP(6,5) - SAT vs UNSAT">
+    </section>
+
+    <section>
+      <h2>Algoritmo</h2>
+<pre><code>def calcular_residuos(clausulas, pesos, modulo):
+    resultado = 0
+    for clausula in clausulas:
+        s = sum(p * l for p, l in zip(pesos, clausula)) % modulo
+        resultado = (resultado + s) % modulo
+    return resultado</code></pre>
+    </section>
+
+    <footer>
+      <p>Site desenvolvido por <a href="https://github.com/JamesClick" target="_blank">JamesClick</a> - 2025</p>
+    </footer>
+  </main>
+</body>
+</html>
