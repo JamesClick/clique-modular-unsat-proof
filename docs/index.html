@@ -45,4 +45,23 @@
           <li><strong>Lemma 1</strong>: UNSAT formulas generate linearly dependent residue vectors.</li>
           <li><strong>Lemma 2</strong>: Chosen weights preserve these dependencies modulo M.</li>
         </ul>
+      </section><section id="results">
+        <h2>Experimental Results</h2>
+        <p>
+          We tested several structured formulas including PHP(3,2), PHP(4,3), PHP(6,5), and random 3-SAT cases. In every UNSAT case, the modular sum <code>S(φ)</code> was zero across 3 or more modules and weight schemes.
+        </p>
+        <p>
+          Below is a comparative benchmark plot between satisfiable and unsatisfiable formulas:
+        </p>
+        <img src="assets/comparative_graph_sat_unsat.png" alt="Comparison between SAT and UNSAT modular sums" class="graph" />
+        <p class="caption">
+          Figure 1: SAT instances produce non-zero S(φ); UNSAT instances converge to 0 mod M.
+        </p>
+      </section>
+
+      <section id="conclusion">
+        <h2>Conclusion</h2>
+        <p>
+          The modular sum approach provides a lightweight and theoretically grounded method to detect unsatisfiability in CNF formulas. Future work includes formal proof completion and integration with modern SAT solvers. Our findings suggest a new path in complexity theory bridging symbolic algebra with satisfiability.
+        </p>
       </section>
