@@ -39,4 +39,16 @@ footer a {
 footer a:hover {
   color: #ffd700;
   text-decoration: none;
+}header {
+  padding: 10px 15px;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+header p {
+  font-size: 0.95rem;
+  margin-top: 5px;
 }
