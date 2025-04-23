@@ -17,6 +17,8 @@
           <a href="#guarantees" class="hover:underline">Theoretical Guarantees</a>
           <a href="#results" class="hover:underline">Results</a>
           <a href="#graphs" class="hover:underline">Comparative Graphs</a>
+          <a href="#code" class="hover:underline">Code & Dataset</a>
+          <a href="#progress" class="hover:underline">Proof Progress</a>
           <a href="#conclusion" class="hover:underline">Conclusion</a>
         </nav>
       </div>
@@ -85,6 +87,37 @@
             <p class="text-sm text-gray-600 text-center">Convergence to 0 for UNSAT; divergence for SAT. Each point uses a different prime and weight scheme.</p>
           </div>
         </div>
+      </section>
+
+      <section id="code" class="my-12">
+        <h2 class="text-3xl font-bold mb-4">Code & Dataset</h2>
+        <p class="mb-4">
+          All source code, datasets and scripts are available in the official GitHub repository:
+          <a href="https://github.com/JamesClick/clique-modular-unsat-proof" target="_blank" class="text-blue-600 underline">GitHub Project</a>
+        </p>
+        <ul class="list-disc list-inside text-gray-700">
+          <li><code>formula.cnf</code>: Random 3-SAT UNSAT formula used in the experiments.</li>
+          <li><code>pesos_utilizados.txt</code>: Strategies of weights applied in the vector sum.</li>
+          <li><code>residuos_resultado.csv</code>: Output residues of S(φ) mod M.</li>
+          <li><code>calcular_residuos.py</code>: Python script to compute modular sums with various weights.</li>
+          <li><code>graficos/*.png</code>: Visual output of all comparative graphs.</li>
+        </ul>
+        <div class="mt-4">
+          <a href="https://jamesclick.github.io/clique-modular-unsat-proof/assets/clique_modular_unsat_prova.zip" target="_blank" class="inline-block bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700">Download Full Package (.zip)</a>
+        </div>
+      </section>
+
+      <section id="progress" class="my-12">
+        <h2 class="text-3xl font-bold mb-4">Proof Formalization Progress</h2>
+        <ul class="list-inside list-disc text-gray-700">
+          <li>✔️ Step 1: Residual Sum Framework – Completed</li>
+          <li>✔️ Step 2: Multi-weight residue convergence – Completed</li>
+          <li>⏳ Step 3: Orthonormal basis of modular vectors – In Progress</li>
+          <li>⏳ Step 4: Algebraic completeness & formal proof – Planned</li>
+        </ul>
+        <p class="mt-4 text-gray-600">
+          Each stage is designed to advance the theory of modular arithmetic as a tool for detecting logical unsatisfiability with computational and algebraic support.
+        </p>
       </section>
 
       <section id="conclusion" class="my-12">
