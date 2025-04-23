@@ -9,9 +9,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="bg-primary text-white text-center py-2">
+  <header>
     <h1>Formalization of the Modular UNSAT Conjecture</h1>
-    <p class="lead mb-0">By Jamesson Richard Campos Santos da Graça (<em>JamesClick</em>)</p>
+    <p>By Jamesson Richard Campos Santos da Graça (<em>JamesClick</em>)</p>
   </header>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
@@ -89,22 +89,19 @@
 
     <section id="graphs" class="mb-5">
       <h2>Graphs</h2>
-      <img src="images/comparative_sat_unsat_graph.png" class="img-fluid" alt="SAT vs UNSAT Graph">
-      <p class="text-muted">Comparison of SAT vs UNSAT behavior using modular residues and multiple weight strategies.</p>
-      <img src="images/distribution-unsat-multiweights.png" class="img-fluid" alt="UNSAT Distribution">
-      <p class="text-muted">Distribution of residues across random weight vectors showing null sum for UNSAT instances.</p>
-      <img src="images/sat-vs-unsat-php6_5.png" class="img-fluid" alt="PHP(6,5) SAT vs UNSAT">
-      <p class="text-muted">Experimental distinction between SAT and UNSAT cases of PHP(6,5) using the proposed method.</p>
+      <img src="docs/images/comparative_sat_unsat_graph.png" class="img-fluid my-3" alt="SAT vs UNSAT Graph">
+      <img src="docs/images/distribution-unsat-multiweights.png" class="img-fluid my-3" alt="UNSAT Distribution">
+      <img src="docs/images/sat-vs-unsat-php6_5.png" class="img-fluid my-3" alt="PHP(6,5) Graph">
     </section>
 
     <section id="conclusion" class="mb-5">
       <h2>Conclusion</h2>
-      <p>This modular residue-based method provides a consistent computational signature for UNSAT Boolean formulas. Across structured cases like PHP(m,n) and random 3-SAT formulas, the total modular sum under orthogonal weights is shown to vanish only for UNSAT instances.</p>
+      <p>This modular residue-based method provides a consistent computational signature for UNSAT Boolean formulas.</p>
     </section>
   </main>
 
-  <footer class="bg-light text-center py-3">
-    <p class="mb-0">Modular UNSAT Conjecture &copy; 2025 | Developed by <a href="https://github.com/JamesClick" target="_blank">JamesClick</a></p>
+  <footer>
+    <p>Modular UNSAT Conjecture &copy; 2025 | Developed by <a href="https://github.com/JamesClick" target="_blank">JamesClick</a></p>
   </footer>
 </body>
 </html>
