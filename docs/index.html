@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modular UNSAT Conjecture - JamesClick</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Modular UNSAT Conjecture</h1>
+    <p>A Residue-Based Signature for Boolean Unsatisfiability</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Abstract</h2>
+      <p>This work introduces a modular computational signature for identifying UNSAT Boolean formulas. By leveraging weighted residue sums under modular arithmetic, we observe that unsatisfiable instances produce a consistent null sum pattern across orthogonal weight vectors and sufficiently large prime moduli.</p>
+    </section>
+
+    <section>
+      <h2>Mathematical Framework</h2>
+      <p>Let \( \varphi \) be a Boolean formula in CNF. Let \( w \in \mathbb{Z}^n \) be a weight vector and \( M \in \mathbb{P} \) a sufficiently large prime. The modular signature is computed as:</p>
+      <p>\[ S(\varphi) = \sum_{C \in \varphi} \left( \sum_{i=1}^{k} w_i \cdot l_i \right) \mod M \]</p>
+      <p>If \( \varphi \) is UNSAT, then: \[ S(\varphi) \equiv 0 \mod M \]</p>
+    </section>
+
+    <section>
+      <h2>Computational Method</h2>
+      <p>The formula is parsed into integer vectors representing clauses. Orthogonal weight vectors (exponential, polynomial, hash-based) are applied and evaluated across different prime moduli. The sum of clause evaluations yields the residue signature.</p>
+    </section>
+
+    <section>
+      <h2>Experimental Results</h2>
+      <img src="images/comparative_sat_unsat_graph.png" alt="Comparison Graph">
+      <img src="images/distribution-unsat-multiweights.png" alt="Distribution UNSAT Graph">
+      <img src="images/sat-vs-unsat-php6_5.png" alt="PHP(6,5) Graph">
+      <p>Results demonstrate that SAT instances exhibit diverse modular residues, while UNSAT instances consistently yield a zero sum across all weights and moduli tested.</p>
+    </section>
+
+    <section>
+      <h2>Code & Downloads</h2>
+      <ul>
+        <li><a href="assets/projeto_final_numerado.pdf" download>Download: Final Project PDF</a></li>
+        <li><a href="assets/residuos_resultado.csv" download>Download: Residue Table (CSV)</a></li>
+        <li><a href="assets/formula.cnf" download>Download: CNF Formula</a></li>
+        <li><a href="assets/pesos_utilizados.txt" download>Download: Applied Weights</a></li>
+        <li><a href="assets/calcular_residuos.py" download>Download: Python Script</a></li>
+        <li><a href="assets/README.md" download>Download: Project Readme</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Conclusion</h2>
+      <p>Modular residue analysis offers a computationally inexpensive method to distinguish UNSAT formulas with a high degree of confidence. Future research will explore formal proofs and extensions to random 3-SAT classes.</p>
+    </section>
+
+    <footer>
+      <p>Developed by <a href="https://github.com/JamesClick" target="_blank">JamesClick</a> – 2025</p>
+    </footer>
+  </main>
+</body>
+</html>
