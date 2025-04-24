@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modular UNSAT Conjecture - JamesClick</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Formalization of the Modular UNSAT Conjecture</h1>
+    <p>By Jamesson Richard Campos Santos da Graça (<em>JamesClick</em>)</p>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container justify-content-center">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#introduction">Introduction</a></li>
+        <li class="nav-item"><a class="nav-link" href="#foundation">Theory</a></li>
+        <li class="nav-item"><a class="nav-link" href="#example">Example</a></li>
+        <li class="nav-item"><a class="nav-link" href="#weights">Weights</a></li>
+        <li class="nav-item"><a class="nav-link" href="#residues">Residues</a></li>
+        <li class="nav-item"><a class="nav-link" href="#files">CNF</a></li>
+        <li class="nav-item"><a class="nav-link" href="#code">Code</a></li>
+        <li class="nav-item"><a class="nav-link" href="#graphs">Graphs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#conclusion">Conclusion</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/JamesClick/clique-modular-unsat-proof" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container my-4">
+    <section id="introduction" class="mb-5">
+      <h2>Introduction</h2>
+      <p>This work presents a computational approach to detecting unsatisfiable (UNSAT) Boolean formulas using modular weighted sums.</p>
+    </section>
+
+    <section id="foundation" class="mb-5">
+      <h2>Theoretical Foundation</h2>
+      <p>Let a CNF formula <code>&phi;</code> be represented by a set of clauses encoded as integer vectors. A weight vector <code>w</code> is applied and evaluated modulo a prime <code>M</code>. If <code>&phi;</code> is UNSAT, then <code>S(&phi;) &equiv; 0</code> for all orthogonal weight vectors and sufficiently large moduli.</p>
+    </section>
+
+    <section id="example" class="mb-5">
+      <h2>Concrete Example</h2>
+      <p>Example formula encoded and evaluated using weights <code>w = (2, 3, 5)</code> and <code>M = 7</code>.</p>
+    </section>
+
+    <section id="weights" class="mb-5">
+      <h2>Application of Weights</h2>
+      <p>We test various weight bases (exponential, polynomial, random) on each formula and compute <code>S(&phi;) mod M</code>.</p>
+    </section>
+
+    <section id="residues" class="mb-5">
+      <h2>Residue Table</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead class="table-light">
+            <tr><th>Formula</th><th>Modulus</th><th>Residues</th><th>Weights</th><th>S(&phi;) mod M</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>PHP(6,5)</td><td>7</td><td>(1,3,2,4,6,1,5)</td><td>(2,3,1,5,7,4,6)</td><td>0</td></tr>
+            <tr><td>3-SAT (20 vars)</td><td>11</td><td>(4,6,1,9,2,8,7)</td><td>(3,5,2,1,6,7,9)</td><td>0</td></tr>
+            <tr><td>PHP(5,4)</td><td>13</td><td>(3,5,4,2,6,7)</td><td>(6,2,4,1,3,5)</td><td>0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="files" class="mb-5">
+      <h2>CNF Files Used</h2>
+      <ul>
+        <li><code>php65_unsat.cnf</code></li>
+        <li><code>3sat_unsat_20vars.cnf</code></li>
+        <li><code>php54_unsat.cnf</code></li>
+      </ul>
+    </section>
+
+    <section id="code" class="mb-5">
+      <h2>Code Snippets</h2>
+      <pre><code>def calcular_residuos(clausulas, pesos, modulo):
+    resultado = 0
+    for clausula in clausulas:
+        s = sum(p * l for p, l in zip(pesos, clausula)) % modulo
+        resultado = (resultado + s) % modulo
+    return resultado</code></pre>
+    </section>
+
+    <section id="graphs" class="mb-5">
+      <h2>Graphs</h2>
+      <img src="images/comparative_sat_unsat_graph.png" class="img-fluid my-3" alt="SAT vs UNSAT Graph">
+      <img src="images/distribution-unsat-multiweights.png" class="img-fluid my-3" alt="UNSAT Distribution">
+      <img src="images/sat-vs-unsat-php6_5.png" class="img-fluid my-3" alt="PHP(6,5) Graph">
+    </section>
+
+    <section id="conclusion" class="mb-5">
+      <h2>Conclusion</h2>
+      <p>This modular residue-based method provides a consistent computational signature for UNSAT Boolean formulas.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Modular UNSAT Conjecture &copy; 2025 | Developed by <a href="https://github.com/JamesClick" target="_blank">JamesClick</a></p>
+  </footer>
+</body>
+</html>
