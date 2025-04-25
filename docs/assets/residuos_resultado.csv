@@ -1,0 +1,4 @@
+Clause,WeightType,Modulus,Residue
+1,Exponential,1000003,532
+2,Polynomial,1000003,887
+...

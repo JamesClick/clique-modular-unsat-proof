@@ -1,0 +1,3 @@
+Exponential: 2^i
+Polynomial: i^2
+Hash-based: SHA256(i) % M
