@@ -1,40 +1,41 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Modular Signature Method – JamesClick</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modular Signature Method - JamesClick</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="site-header">
-    <h1>Modular UNSAT Conjecture</h1>
-    <p>A Residue-Based Signature for Boolean Unsatisfiability</p>
-    <a href="assets/clique_prova_final.zip" class="download-btn">Download Complete ZIP</a>
-  </header>
-
-  <main class="content">
+    <h1>Modular Signature for UNSAT Detection</h1>
+    <p>Formal Proof by JamesClick</p>
+    <a href="assets/clique_prova_final.zip" class="download-btn">Download Full Package</a>
+  </header>  <main class="content">
     <section>
       <h2>Abstract</h2>
-      <p>This work introduces a modular computational signature for identifying UNSAT Boolean formulas by analyzing weighted sums modulo a prime number.</p>
-    </section>
+      <p>This work introduces a modular residue-based method to identify UNSAT Boolean formulas, offering a potential new signature for unsatisfiability detection.</p>
+    </section><section>
+  <h2>Graphs</h2>
+  <img src="images/comparative_sat_unsat_graph.png" alt="SAT vs UNSAT Graph">
+  <img src="images/distribution-unsat-multiweights.png" alt="UNSAT Distribution">
+  <img src="images/sat-vs-unsat-php6_5.png" alt="PHP(6,5) Signature">
+</section>
 
-    <section>
-      <h2>Graphs</h2>
-      <img src="images/comparative_sat_unsat_graph.png" alt="SAT vs UNSAT Graph"/>
-      <img src="images/distribution-unsat-multiweights.png" alt="UNSAT Distribution"/>
-      <img src="images/sat-vs-unsat-php6_5.png" alt="PHP(6,5) Signature"/>
-    </section>
+<section>
+  <h2>Video Presentation</h2>
+  <video controls class="presentation-video">
+    <source src="assets/modular_unsat_video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</section>
 
-    <section>
-      <h2>Conclusion</h2>
-      <p>The absence of residues across orthogonal weights is a reliable indicator of formula unsatisfiability. The method shows promise across structured and random instances.</p>
-    </section>
-  </main>
+<section>
+  <h2>Conclusion</h2>
+  <p>The modular signature approach shows consistent residue nullification across structured and random unsatisfiable formulas, reinforcing its potential for broader UNSAT detection.</p>
+</section>
 
-  <footer>
-    <p>Made with purpose by JamesClick — 2025</p>
+  </main>  <footer>
+    <p>Made with purpose by JamesClick - 2025</p>
   </footer>
 </body>
 </html>
