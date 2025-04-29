@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,33 +9,50 @@
 <body>
   <header class="site-header">
     <h1>Modular Signature for UNSAT Detection</h1>
-    <p>Formal Proof by JamesClick</p>
-    <a href="assets/clique_prova_final.zip" class="download-btn">Download Full Package</a>
-  </header>  <main class="content">
+    <p>Formalization and Experimental Validation - JamesClick (2025)</p>
+    <a href="assets/Formalization_of_the_Modular_UNSAT_Conjecture__21_.pdf" class="download-btn">Download Full Scientific Article (PDF)</a>
+    <a href="assets/clique_prova_final.zip" class="download-btn">Download Full Project Package (ZIP)</a>
+    <a href="assets/Modular_Signatures_Extended.csv" class="download-btn">Download Residue Data (CSV)</a>
+    <a href="assets/20250428_114605_0001.mp4" class="download-btn">Download Video Presentation (MP4)</a>
+  </header>
+
+  <main class="content">
+
     <section>
       <h2>Abstract</h2>
-      <p>This work introduces a modular residue-based method to identify UNSAT Boolean formulas, offering a potential new signature for unsatisfiability detection.</p>
-    </section><section>
-  <h2>Graphs</h2>
-  <img src="images/comparative_sat_unsat_graph.png" alt="SAT vs UNSAT Graph">
-  <img src="images/distribution-unsat-multiweights.png" alt="UNSAT Distribution">
-  <img src="images/sat-vs-unsat-php6_5.png" alt="PHP(6,5) Signature">
-</section>
+      <p>We present a modular algebraic method for detecting unsatisfiability in Boolean formulas. By assigning integer weights and computing modular residues, the method generates signatures that consistently identify UNSAT instances across classical benchmarks. This first version presents experimental findings and outlines future research directions, recognizing current limitations and proposing future improvements.</p>
+    </section>
 
-<section>
-  <h2>Video Presentation</h2>
-  <video controls class="presentation-video">
-    <source src="assets/modular_unsat_video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</section>
+    <section>
+      <h2>Graphs</h2>
+      <img src="images/comparative_sat_unsat_graph.png" alt="SAT vs UNSAT Graph">
+      <img src="images/distribution-unsat-multiweights.png" alt="UNSAT Distribution">
+      <img src="images/sat-vs-unsat-php6_5.png" alt="PHP(6,5) Signature">
+    </section>
 
-<section>
-  <h2>Conclusion</h2>
-  <p>The modular signature approach shows consistent residue nullification across structured and random unsatisfiable formulas, reinforcing its potential for broader UNSAT detection.</p>
-</section>
+    <section>
+      <h2>Video Presentation</h2>
+      <video controls class="presentation-video">
+        <source src="assets/20250428_114605_0001.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <br />
+      <a href="assets/20250428_114605_0001.mp4" class="download-btn">Download Video Presentation (MP4)</a>
+    </section>
 
-  </main>  <footer>
+    <section>
+      <h2>Limitations and Future Work</h2>
+      <p>This first version is based on empirical validation and shows consistent detection of UNSAT instances across benchmarks. However, limitations include the absence of a general formal proof, the possibility of pathological CNFs evading detection, lack of theoretical criteria for optimal weight and modulus selection, and scalability challenges in large-scale applications. Future work aims to formalize the theory, expand to other logical frameworks, develop hybrid solving methods, and optimize computational efficiency via parallelization and sampling strategies.</p>
+    </section>
+
+    <section>
+      <h2>Conclusion</h2>
+      <p>The Modular Signature method demonstrates promising experimental results in detecting UNSAT formulas efficiently. While further formal proofs and scalability improvements are required, this initial version establishes a solid foundation for future research and development in SAT-solving and computational complexity fields.</p>
+    </section>
+
+  </main>
+
+  <footer>
     <p>Made with purpose by JamesClick - 2025</p>
   </footer>
 </body>
