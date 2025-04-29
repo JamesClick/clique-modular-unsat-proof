@@ -1,4 +1,4 @@
-Clause,WeightType,Modulus,Residue
-1,Exponential,1000003,532
-2,Polynomial,1000003,887
-...
+FormulaID,WeightType,Modulus,S_Total,Satisfiability
+PHP65,Exponential,1000003,0,UNSAT
+3SAT20,Hash,1000003,813,SAT
+Tseitin,Polynomial,1000003,0,UNSAT
