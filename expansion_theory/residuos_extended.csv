@@ -1,0 +1,4 @@
+FormulaID,WeightType,Modulus,S_Total,Satisfiability
+PHP65,Exponential,1000003,0,UNSAT
+Tseitin,Polynomial,1000003,0,UNSAT
+XOR-SAT,Hash,1000003,0,UNSAT

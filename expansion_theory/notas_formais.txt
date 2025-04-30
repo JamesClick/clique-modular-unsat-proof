@@ -1,0 +1,3 @@
+Notas formais sobre tentativa de demonstração da assinatura modular em fórmulas UNSAT.
+
+Iniciar pela estrutura de PHP e Tseitin.
