@@ -1,0 +1,11 @@
+FormulaID,Type,ClauseCount,WeightType,Modulus,ResidueSum,Classification
+Tseitin7,Tseitin,35,Sequential,1009,0,UNSAT
+Tseitin9,Tseitin,47,Polynomial,100003,0,UNSAT
+XOR_4_unsat,XOR,29,SHA256,1009,0,UNSAT
+XOR_5_unsat,XOR,36,Exponential,100003,0,UNSAT
+PHP_6_5,PHP,45,Sequential,1000003,0,UNSAT
+PHP_7_6,PHP,56,Polynomial,1009,0,UNSAT
+XOR_6_unsat,XOR,50,SHA256,100003,0,UNSAT
+Tseitin11,Tseitin,60,Exponential,1009,0,UNSAT
+XOR_3_unsat,XOR,20,Polynomial,100003,0,UNSAT
+PHP_8_7,PHP,70,SHA256,1000003,0,UNSAT
