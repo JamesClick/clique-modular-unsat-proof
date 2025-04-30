@@ -1,5 +1,6 @@
 \documentclass{article}
-\usepackage{amsmath, amssymb}
+\usepackage{amsmath, amssymb, graphicx}
+\usepackage{hyperref}
 \title{Modular UNSAT Signature – Theoretical Expansion}
 \author{Jamesson Richard Campos Santos da Graça}
 \date{}
@@ -9,15 +10,53 @@
 \maketitle
 
 \section{Introduction}
-This document proposes a formal expansion of the Modular Signature method for UNSAT detection.
+This document proposes a formal expansion of the Modular Signature method for UNSAT detection, building upon empirical evidence from residue analysis over classical CNF benchmarks.
 
 \section{Formal Definitions}
-% Insert formal notation here
+Let $\varphi$ be a CNF formula with $m$ clauses. Let $w = (w_1, \dots, w_m)$ be a vector of integer weights assigned to clauses, and let $M$ be a positive integer modulus. Define the modular residue signature of $\varphi$ as:
+
+\[
+S(\varphi; w, M) = \left( \sum_{i=1}^{m} w_i \cdot r_i \right) \mod M
+\]
+
+where $r_i$ is a Boolean evaluation of clause $C_i$ under a fixed assignment or abstraction.
 
 \section{Theoretical Conjecture}
-% State the conjecture clearly
+If $\varphi$ is unsatisfiable, then for a sufficiently large prime modulus $M$ and for any orthogonal basis of weight vectors $w$, we have:
+
+\[
+S(\varphi; w, M) = 0 \mod M \quad \text{for all } w \in \mathbb{W}
+\]
+
+where $\mathbb{W}$ is a set of weight schemes including sequential, polynomial and hash-based encodings.
 
 \section{Partial Proof Attempts}
-% Add case analysis and algebraic reasoning
+So far, we have verified the conjecture empirically on the following classes of formulas:
+\begin{itemize}
+  \item Pigeonhole Principle: PHP(4,3), PHP(5,4), PHP(6,5)
+  \item Tseitin Parity CNFs with 6 variables
+  \item XOR-SAT instances: XOR(8), XOR(12)
+  \item Random 3-SAT: SAT/UNSAT with 20 variables
+\end{itemize}
+
+For each case, we applied three weighting strategies (Sequential, Polynomial, Hash) and used a fixed modulus $M = 1000003$.
+
+\section{Empirical Graph}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.9\linewidth]{modular_residue_sum.png}
+\caption{Residue signature $S(\varphi; w, M)$ across formulas and weights. UNSAT instances yield residue zero consistently.}
+\end{figure}
+
+\noindent Associated datasets:
+\begin{itemize}
+  \item \texttt{Combined\_Modular\_UNSAT\_Results.csv}
+  \item \texttt{Teste\_Iniciais\_XOR12.csv}
+  \item \texttt{Teste\_Iniciais\_\_PHP6\_5\_\_.csv}
+  \item \texttt{teste\_inicial\_3sat20.csv}
+\end{itemize}
+
+\section{Next Steps}
+Further analysis will formalize bounds on $M$, explore basis transformations, and extend the method to general CSPs and non-CNF encodings.
 
 \end{document}
