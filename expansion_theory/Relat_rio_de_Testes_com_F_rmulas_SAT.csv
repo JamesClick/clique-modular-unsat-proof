@@ -1,0 +1,11 @@
+FormulaID,Type,ClauseCount,WeightType,Modulus,ResidueSum,Classification
+SAT_Circuit_1,Circuit,85,Sequential,1009,114,SAT
+SAT_Circuit_2,Circuit,92,Polynomial,100003,63291,SAT
+3SAT_80a,3SAT,80,SHA256,1009,1001,SAT
+3SAT_100b,3SAT,100,Exponential,100003,77311,SAT
+QBF_SAT1,QBF,130,Sequential,1000003,502134,SAT
+QBF_SAT2,QBF,140,Polynomial,1009,991,SAT
+3SAT_90rand,3SAT,90,SHA256,100003,43345,SAT
+3SAT_120dense,3SAT,120,Exponential,1009,112,SAT
+Logic_ChainSAT,Logic,60,Polynomial,100003,39401,SAT
+SAT_Circuit_3,Circuit,95,SHA256,1000003,288100,SAT
